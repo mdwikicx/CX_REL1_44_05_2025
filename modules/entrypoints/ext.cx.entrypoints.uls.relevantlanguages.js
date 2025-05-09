@@ -114,7 +114,7 @@ const sitematrix = require('./sitematrix.json');
 			for (const frequentLanguage of frequentLanguages) {
 				const wikiDomainCode = siteMapper.getWikiDomainCode(frequentLanguage);
 
-				if (sitematrix.indexOf(wikiDomainCode) < 0) {
+				if (sitematrix.indexOf(wikiDomainCode) < 0 && wikiDomainCode !== 'mdwiki') {
 					continue;
 				}
 
