@@ -59,6 +59,8 @@
 		services.requestManager = new mw.cx.MwApiRequestManager( mw.cx.sourceLanguage, mw.cx.targetLanguage, services.siteMapper );
 		services.MTService = new mw.cx.MachineTranslationService( mw.cx.sourceLanguage, mw.cx.targetLanguage, services.siteMapper );
 		services.MTManager = new mw.cx.MachineTranslationManager( mw.cx.sourceLanguage, mw.cx.targetLanguage, services.MTService );
+		services.campaign = query.campaign;
+		services.tr_type = query.tr_type;
 
 		getTargetTitle( query.targettitle, sourceTitle, services.MTService ).then( ( targetTitle ) => {
 			const sourceWikiPage = new mw.cx.dm.WikiPage( sourceTitle, mw.cx.sourceLanguage, sourceRevision, sourceSectionTitle );
