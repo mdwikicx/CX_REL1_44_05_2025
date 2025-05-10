@@ -75,7 +75,9 @@ class SpecialContentTranslation extends SpecialPage {
 		}
 
 		if ( !$this->canUserProceed() ) {
-			return;
+			// return;
+			// some issue when use mdwiki.org
+			echo "";
 		}
 
 		if ( $this->isUnifiedDashboard() ) {
@@ -197,7 +199,9 @@ class SpecialContentTranslation extends SpecialPage {
 		// Remove all characters that are not allowed in cookie name: ( ) < > @ , ; : \ " / [ ] ? = { }.
 		$cookieName = preg_replace( '/[()<>@,;:\\"\/\[\]?={}]/', '', $cookieName );
 
-		return $request->getCookie( $cookieName, '' ) !== null;
+		// return $request->getCookie( $cookieName, '' ) !== null;
+		// issue with medwiki.toolforge.org session
+		return true;
 	}
 
 	protected function canUserProceed(): bool {

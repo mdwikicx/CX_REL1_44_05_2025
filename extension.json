@@ -358,13 +358,25 @@
 			"description": "The external Database cluster name where the database lives or false if not exists",
 			"value": false
 		},
+		"ContentTranslationSiteTemplates_mdwiki": {
+			"value": {
+				"view": "//mdwiki.org/wiki/$2",
+				"action": "//mdwiki.org/w/index.php?title=$2",
+				"apix": "//mdwiki.org/w/api.php",
+				"api": "//medwiki.toolforge.org/mdwiki_api.php",
+				"cx": "https://cxserver.wikimedia.org/v1",
+				"cookieDomain": null,
+				"restbase": "//mdwiki.org/api/rest_v1"
+			}
+		},
 		"ContentTranslationSiteTemplates": {
 			"value": {
-				"view": "https://$1.wikipedia.org/wiki/$2",
-				"action": "https://$1.wikipedia.org/w/index.php?title=$2",
-				"api": "https://$1.wikipedia.org/w/api.php",
-				"cx": "http://localhost:8080/v1",
-				"cookieDomain": null
+				"view": "//$1.wikipedia.org/wiki/$2",
+				"action": "//$1.wikipedia.org/w/index.php?title=$2",
+				"api": "//$1.wikipedia.org/w/api.php",
+				"cx": "https://cxserver.wikimedia.org/v1",
+				"cookieDomain": null,
+				"restbase": "//$1.wikipedia.org/api/rest_v1"
 			}
 		},
 		"ContentTranslationTranslateInTarget": {
@@ -373,7 +385,7 @@
 		},
 		"ContentTranslationAsBetaFeature": {
 			"description": "Whether to have CX available only as a beta feature and only shown to the users who have enabled the beta feature.",
-			"value": true
+			"value": false
 		},
 		"ContentTranslationTargetNamespace": {
 			"description": "Target namespace to publish articles. Values can be valid namespace ids. Example: 0 for Main, 2 for User namespace",
@@ -974,6 +986,7 @@
 					"config": {
 						"DomainCodeMapping": "ContentTranslationDomainCodeMapping",
 						"SiteTemplates": "ContentTranslationSiteTemplates",
+						"SiteTemplates_mdwiki": "ContentTranslationSiteTemplates_mdwiki",
 						"TranslateInTarget": "ContentTranslationTranslateInTarget"
 					}
 				}
@@ -1578,6 +1591,7 @@
 				"ui/mw.cx.ui.ToolsColumn.js",
 				"dm/mw.cx.dm.DraftTranslationDTO.js",
 				"mw.cx.init.Translation.js",
+				"mw.cx.TranslationMdwiki.js",
 				"mw.cx.TargetArticle.js",
 				"mw.cx.TranslationController.js",
 				"mw.cx.TranslationTracker.js",
